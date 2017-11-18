@@ -3,10 +3,11 @@
  * 
  * TODO write the syntax for the Manager class to Extend the Employee class
  */
-public class Manager{
+public class Manager extends Employee {
 	//maxSize is the total amount of employees that this manager can support
 	int maxSize;
-	
+	String name;
+	double salary;
 	/*
 	 * This constructor will not work correctly until the Manager class has been extended from the Employee class
 	 * Without extending employee, the manager class does not understand the variables name and salary
@@ -34,4 +35,24 @@ public class Manager{
 			throw new Exception();
 		}
 	}
+	
+		public String toString() 
+		{
+			return "Manager Name: " + name + "; Salary: "+ salary;
+		}
+
+	public static void StockShelf() {
+		Stocker stocker = new Stocker();
+		while (stocker.StockShelf()) {
+			stocker.StockShelf();
+			
+		}
+		int num = stocker.shelves;
+		System.out.println("Number of shelves is: " + num);
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

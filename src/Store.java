@@ -6,13 +6,14 @@ public class Store {
 	Manager manager;
 	
 	public static void main(String[] args) {
-		Store s = new Store();
+		Manager manager = new Manager ("Tim", 5000,5);
+		Store s = new Store(manager);
 		s.PrintEmployees();
 		System.out.println();
 		s.PrintManager();
 		
 		//TODO: The manager doesn't know how to StockShelfs.
-		Manager.StockSelf();
+		Manager.StockShelf();
 		
 		/**
 		 * Challenge Concept: try/catch and throwing an exception
@@ -24,10 +25,13 @@ public class Store {
 		s.PrintEmployees();
 	}
 	
-	public Store() {
+	public Store(Manager manager) {
+		this.manager = manager;
+		
 		//Notice I am using different constructors for Employees
 		employees.add(new Employee("Tom"));
 		employees.add(new Employee("Jane", 40000));
+		
 		
 		/*
 		 * This add statement will not work until the Manager class has been extended
